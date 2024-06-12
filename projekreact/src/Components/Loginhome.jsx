@@ -11,13 +11,13 @@ const Loginhome = () => {
     
       	<div className="login-umkmuser">
 <div className="login">
-<div className="form-email-login">
-<div className="form-email-login-child2">
+<div className="form-email-login-user">
+<div className="form-email-login-child2-user">
 </div>
 <Link to='/Login2' className="umkm" id="umkmText">Umkm</Link>
 </div>
-<div className="form-password-login">
-<div className="form-email-login-child2">
+<div className="form-password-login-user">
+<div className="form-email-login-child2-user">
 </div>
 <Link to='/Login1' className="user" id="userText">User</Link>
 </div>

@@ -1,41 +1,68 @@
-import React from 'react'
-import './Index.css'
-import lambang from "../Assets/img/lambang.png"
-import home from '../Assets/img/1.png'
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import './Index.css';
+import lambang from "../Assets/img/lambang.png";
+import home from '../Assets/img/1.png';
+
 const Daftar = () => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value);
+  }
+
+  const handlePasswordChange = (e) => {
+    setPassword(e.target.value);
+  }
+
+  const handleConfirmPasswordChange = (e) => {
+    setConfirmPassword(e.target.value);
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Add form submission logic here
+  }
+
   return (
     <>
       <div className="login-umkmuser">
-      <img className="homelog" alt="" src={home}/>
-<div className="login-umkmuser-child">
-</div>
-<img className="lambanglog" alt="" src={lambang}/>
-<img className="rectanglelogin" alt="" src="Rectangle 11.svg"/>
-<b className="masukdaftarlog">Buat AKun</b>
-<b className="email1">Email</b>
-<b className="kata-sandi1">Kata Sandi</b>
-<b className="kata-sandi2">Masukkan Kembali Kata Sandi</b>
-
-<div className="form-email-login" id="formEmailLogin">
-<div className="form-email-login-child1">
-</div>
-</div>
-<div className="form-password-login-child1">
-</div>
-<div className="form-password-login-child2">
-</div>
-
-<div className="button">
-<img className="button-child" alt="" src="Rectangle 9.svg"/>
-<b className="masuk">Masuk</b>
-
-</div> 
-<div className="tidak-punya-akun-container" id="tidakPunyaAkun">Sudah punya akun?
-<span className="daftar-di-sini">Masuk Di sini!</span>
-</div>
-</div>
+        <img className="homelog" alt="" src={home}/>
+        <div className="login-umkmuser-child"></div>
+        <img className="lambanglog" alt="" src={lambang}/>
+        <div className="rectanglelogin"></div>
+        <b className="masukdaftarlog">Daftar</b>
+        <form onSubmit={handleSubmit}>
+          <label className="email1" htmlFor="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            value={email}
+            onChange={handleEmailChange}
+            className="form-email-login"
+          />
+          <label className="kata-sandi1" htmlFor="password">Kata Sandi</label>
+          <input
+            type="password"
+            id="password"
+            value={password}
+            onChange={handlePasswordChange}
+            className="form-password-login"
+          />
+         
+        </form>
+        <div className="tidak-punya-akun-container" id="tidakPunyaAkun">
+          Sudah punya akun?
+          <span className="daftar-di-sini">Masuk Di sini!</span>
+        </div>
+        <div className="button">
+          <Link to="/" className="Daftar">Daftar</Link>
+        </div>
+      </div>
     </>
   )
 }
 
-export default Daftar
+export default Daftar;

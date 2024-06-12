@@ -20,14 +20,13 @@ const Login2 = () => {
 <Link to='/Daftar' className="daftar-di-sini">Daftar Di sini!</Link>
 </div>
 <div className="form-email-login2" id="formEmailLogin">
-<input className="form-email-login-child">
+<input className="form-login-umkm-child">
 </input>
 </div>
 <input className="form-password-login-child">
 </input>
 
 <div className="button">
-<img className="button-child" alt="" src="Rectangle 9.svg"/>
 <Link to='/Umkmprofile' className="masuk">Masuk</Link>
 </div> 
 

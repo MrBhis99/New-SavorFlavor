@@ -1984,6 +1984,18 @@
 }
 .form-email-login {
     position: absolute;
+    top: 250px;
+    left: 750px;
+    border-radius: 60px;
+    background-color: #fff;
+    border: 1px solid #eb8a47;
+    box-sizing: border-box;
+    width: 644px;
+    height: 62px;
+    cursor: pointer;
+}
+.form-email-login-user {
+    position: absolute;
     top: -80px;
     left: 250px;
     background-color: #fff;
@@ -1991,18 +2003,40 @@
     height: 62px;
     background-color: #ff8c00;
     border-radius: 10px;
-    
 }
-.form-email-login2 {
+
+.form-password-login {
     position: absolute;
-    top: -80px;
-    left: 0px;
+    top: 440px;
+    left: 750px;
+    border-radius: 60px;
     background-color: #fff;
+    border: 1px solid #eb8a47;
+    box-sizing: border-box;
+    width: 644px;
+    height: 62px;
+    cursor: pointer;
+}
+.form-password-login-user {
+    position: absolute;
+    top: 70px;
+    left: 250px;
+    border-radius: 10px;
+    background-color: #ff8c00;
     width: 150px;
     height: 62px;
-    background-color: #ff8c00;
-    border-radius: 10px;
-    
+}
+.form-password-login2{
+    position: absolute;
+    top: 480px;
+    left: 750px;
+    border-radius: 60px;
+    background-color: #fff;
+    border: 1px solid #eb8a47;
+    box-sizing: border-box;
+    width: 644px;
+    height: 62px;
+    cursor: pointer;
 }
 .user {
     position: absolute;
@@ -2016,15 +2050,6 @@
     text-decoration: none;
     color: #fff;
     font-weight: bold;
-}
-.form-password-login {
-    position: absolute;
-    top: 70px;
-    left: 250px;
-    border-radius: 10px;
-    background-color: #ff8c00;
-    width: 150px;
-    height: 62px;
 }
 .login {
     position: absolute;
@@ -2049,7 +2074,8 @@
     width: 725px;
     height: 710px;
 }
-.lambanglog{
+
+.lambanglog {
     position: absolute;
     top: 320px;
     left: 27px;
@@ -2080,6 +2106,18 @@
     width: 367px;
     height: 63px;
 }
+.masukdaftarlog {
+    font-family: "Inter", sans-serif;
+    position: absolute;
+    top: 73px;
+    left: 900px;
+    font-size: 48px;
+    display: inline-block;
+    color: #ff8c00;
+    text-align: center;
+    width: 367px;
+    height: 63px;
+}
 .login-umkmuser {
     width: 100%;
     position: relative;
@@ -2092,6 +2130,31 @@
     font-size: 32px;
     color: #fff;
     font-family: "Inter", sans-serif;
+}
+.button {
+    position: absolute;
+    top: 350px;
+    left: 250px;
+}
+.button-child {
+    width: 300px;
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+    background-color: #ff8c00;
+    color: white;
+    cursor: pointer;
+}
+.tidak-punya-akun-container {
+    position: absolute;
+    top: 410px;
+    left: 250px;
+    font-size: 14px;
+    color: #ff8c00;
+}
+.daftar-di-sini {
+    cursor: pointer;
+    text-decoration: underline;
 }
 
 /* end of Login umkm/user */
@@ -2115,10 +2178,11 @@
     color: #fff;
     text-align: center;
     height: 64px;
-    left: 400px;
+    left: 375px;
     top: -90px;
 }
 .email {
+    font-size: 40px ;
     color: #ff8c00;
     position: absolute;
     top: 200px;
@@ -2128,6 +2192,7 @@
     height: 56px;
 }
 .kata-sandi {
+    font-size: 40px;
     color: #ff8c00;
     position: absolute;
     top: 380px;
@@ -2151,9 +2216,22 @@
     cursor: pointer;
     color: #ff8c00;
 }
-.form-email-login-child {
+.form-login-user-child {
     position: absolute;
-    top: 350px;
+    top: 250px;
+    left: 750px;
+    border-radius: 60px;
+    background-color: #fff;
+    border: 1px solid #eb8a47;
+    box-sizing: border-box;
+    width: 644px;
+    height: 62px;
+    cursor: pointer;
+
+}
+.form-login-umkm-child {
+    position: absolute;
+    top: 250px;
     left: 750px;
     border-radius: 60px;
     background-color: #fff;
@@ -2186,6 +2264,17 @@
     color: #fff;
     font-weight: bold;
 }
+.Daftar {
+    position: absolute;
+    top: 33px;
+    left: 154px;
+    display: inline-block;
+    width: 336px;
+    height: 30px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
 .button {
     position: absolute;
     top: 550px;
@@ -2200,19 +2289,21 @@
 /* end of login 1 */
 /* daftar */
 .email1 {
+    font-size: 40px;
     color: #ff8c00;
     position: absolute;
-    top: 150px;
-    left: 750px;
+    top: 190px;
+    left: 540px;
     display: inline-block;
     width: 552px;
     height: 56px;
 }
 .kata-sandi1 {
+    font-size: 40px;
     color: #ff8c00;
     position: absolute;
-    top: 290px;
-    left: 750px;
+    top: 370px;
+    left: 580px;
     display: inline-block;
     width: 552px;
     height: 56px;
@@ -2221,7 +2312,7 @@
     color: #ff8c00;
     position: absolute;
     top: 430px;
-    left: 750px;
+    left: 735px;
     display: inline-block;
     width: 552px;
     height: 56px;
@@ -2229,7 +2320,7 @@
 .form-email-login-child1 {
     position: absolute;
     top: 280px;
-    left: 470px;
+    left: 500px;
     border-radius: 60px;
     background-color: #fff;
     border: 1px solid #eb8a47;
