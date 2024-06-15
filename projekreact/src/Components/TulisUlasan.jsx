@@ -1,59 +1,118 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import './Index.css';
-import Navbar from './Navbar';
-import Footer from './Footer';
-import bintang from '../Assets/img/bintang.png';
-import Vector from '../Assets/img/Vector.png';
+// src/components/Review.jsx
+import React, { useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faStar } from '@fortawesome/free-solid-svg-icons';
+import Navbar from './Navbar'; // Pastikan path-nya benar
+import Footer from './Footer'; // Pastikan path-nya benar
+import { Link } from 'react-router-dom'; // Impor Link dari react-router-dom
 
-const TulisUlasan = () => {
-  const navigate = useNavigate();
+// Impor gambar panah kembali
+import backArrowImage from '../Assets/img/Vector.png'; // Sesuaikan dengan struktur proyek Anda
 
-  const handleVectorClick = () => {
-    navigate('/Detailumkm');
+const Review = () => {
+  const [rating, setRating] = useState(0);
+  const [reviewText, setReviewText] = useState('');
+
+  const handleRating = (rate) => {
+    setRating(rate);
   };
 
-  const handleSimpanUlasanClick = () => {
-    navigate('/UlasanBikaAmbon');
+  const handleReviewText = (event) => {
+    setReviewText(event.target.value);
+  };
+
+  const saveReview = () => {
+    // Simpan ulasan
+    console.log('Ulasan disimpan:', { rating, reviewText });
+    // Navigasi ke /UlasanBikaAmbon setelah menyimpan ulasan
+    // Gantikan dengan logika navigasi yang sesuai dengan router Anda
+    // history.push('/UlasanBikaAmbon');
   };
 
   return (
     <>
+      <style>
+        {`
+          body {
+            font-family: 'Inter', sans-serif;
+          }
+        `}
+      </style>
       <Navbar />
-      <div className="halaman-tulis-ulasan-2_tulis-ulasan">
-        <div className="halaman-tulis-ulasan-2-child_tulis-ulasan"></div>
-        <img className="halaman-tulis-ulasan-2-item_tulis-ulasan" alt="" src={bintang} />
-        <img 
-          className="icon-share_tulis-ulasan" 
-          alt="" 
-          src={Vector} 
-          onClick={handleVectorClick} 
-          style={{ cursor: 'pointer' }}
-        />
-        <input 
-          className="salah-satu-bika_tulis-ulasan" 
-        />
-        <div className="halaman-tulis-ulasan-2-inner_tulis-ulasan"></div>
-        <div 
-          className="simpan-ulasan_tulis-ulasan" 
-          id="simpanUlasanText" 
-          onClick={handleSimpanUlasanClick} 
-          style={{ cursor: 'pointer' }}
-        >
-          Simpan ulasan
+      <div style={{ display: 'flex', justifyContent: 'center', padding: '40px' }}>
+        <div style={{
+          marginTop:'50px',
+          padding: '40px',
+          maxWidth: '1200px',
+          width: '100%',
+          backgroundColor: 'white',
+        }}>
+          <div style={{ display: 'flex', alignItems: 'center', marginBottom: '20px' }}>
+            <Link to="/Detailumkm" style={{ textDecoration: 'none' }}>
+              <img src={backArrowImage} alt="Back" style={{ width: '30px', height: '30px', cursor: 'pointer' }} />
+            </Link>
+            <h2 style={{ fontSize:'35px', marginLeft: '20px' }}>Ulasan Bika Ambon Rian</h2>
+          </div>
+          <div style={{ display: 'flex', alignItems: 'center' }}>
+            {[1, 2, 3, 4, 5].map((star) => (
+              <FontAwesomeIcon
+                key={star}
+                icon={faStar}
+                size="2x"
+                color={star <= rating ? 'orange' : 'lightgray'}
+                onClick={() => handleRating(star)}
+                style={{ cursor: 'pointer' }}
+              />
+            ))}
+            {/* Optionally include a half-star if the rating is not an integer */}
+            {rating % 1 !== 0 && (
+              <FontAwesomeIcon
+                icon={faStar}
+                size="2x"
+                color="orange"
+                onClick={() => handleRating(Math.floor(rating) + 0.5)}
+                style={{ cursor: 'pointer' }}
+              />
+            )}
+          </div>
+          <textarea
+            value={reviewText}
+            onChange={handleReviewText}
+            style={{
+              width: '100%',
+              height: '200px',
+              marginTop: '20px',
+              padding: '20px',
+              borderRadius: '5px',
+              border: '1px solid lightgray',
+              fontSize: '16px',
+              fontFamily: 'Inter, sans-serif' // Pastikan font Inter diaplikasikan
+            }}
+            placeholder="Tulis ulasan Anda di sini..."
+          />
+          <Link to="/UlasanBikaAmbon" style={{ textDecoration: 'none' }}>
+            <button
+              onClick={saveReview}
+              style={{
+                marginTop: '20px',
+                padding: '15px 30px',
+                backgroundColor: 'orange',
+                color: 'white',
+                border: 'none',
+                borderRadius: '5px',
+                cursor: 'pointer',
+                fontSize: '16px',
+                fontFamily: 'Inter, sans-serif' // Pastikan font Inter diaplikasikan
+              }}
+            >
+              Simpan ulasan
+            </button>
+          </Link>
         </div>
-        <div className="halaman-utama-parent_tulis-ulasan">
-          <b className="halaman-utama_tulis-ulasan">Halaman Utama</b>
-          <b className="profil_tulis-ulasan">Profil</b>
-          <b className="masukdaftar_tulis-ulasan">Masuk/Daftar</b>
-          <b className="rekomendasi_tulis-ulasan">Rekomendasi</b>
-          <b className="tentang-kami_tulis-ulasan">Tentang Kami</b>
-        </div>
-        <b className="ulasan-bika-ambon_tulis-ulasan">Ulasan Bika Ambon Rian</b>
       </div>
       <Footer />
     </>
   );
 };
 
-export default TulisUlasan;
+export default Review;
