@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './DashboardProduk.css';
 
 const DashboardProduk = () => {
@@ -10,6 +11,8 @@ const DashboardProduk = () => {
     { no: 3, namaUMKM: 'Es Dawet', kategori: 'Minuman', konten: 'Es Dawet Enak', status: 'Terverifikasi' },
     // Add more data as needed
   ]);
+
+  const navigate = useNavigate();
 
   const showDeletePopup = (item) => {
     setSelectedItem(item);
@@ -27,10 +30,17 @@ const DashboardProduk = () => {
     hideDeletePopup();
   };
 
+  const handleTambahProdukClick = () => {
+    navigate('/admin/products/tambah');
+  };
+
   return (
     <div className="dashboard-produk_produk">
       <div className="home_produk">HOME</div>
-      <div className="produk_produk">Produk</div>
+      <div className="produk-header_produk">
+        <div className="produk_produk">Produk</div>
+        <button className="tambah-produk-button_produk" onClick={handleTambahProdukClick}>Tambah Produk</button>
+      </div>
       <div className="table-container_produk">
         <table className="produk-table_produk">
           <thead>
@@ -55,7 +65,6 @@ const DashboardProduk = () => {
                   <i className="fas fa-edit icon_produk" title="Edit"></i>
                   <i className="fas fa-trash icon_produk" title="Delete" onClick={() => showDeletePopup(produk)}></i>
                   <i className="fas fa-eye icon_produk" title="Show"></i>
-                  <i className="fas fa-check icon_produk" title="Verify"></i>
                 </td>
               </tr>
             ))}

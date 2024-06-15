@@ -27,6 +27,7 @@ import AdminProduk from './Admin/Component/DashboardProduk';
 import AdminPengguna from './Admin/Component/DasboardPengguna';
 import AdminUmkm from './Admin/Component/DashboardUmkm';
 import BookmarkPage from './Components/BookmarkPage';
+import TambahProduk from './Admin/Component/Tambahprodukadmin'; // Make sure the path is correct
 
 function App() {
   return (
@@ -52,15 +53,16 @@ function App() {
         <Route path="/adminlogin" element={<Adminlogin />} />
         <Route path="/ulasanbikaambon" element={<UlasanBikaAmbon />} />
         <Route path="/tulisulasan" element={<TulisUlasan />} />
-        <Route path="/BookmarkPage" element={<BookmarkPage/>} />
+        <Route path="/BookmarkPage" element={<BookmarkPage />} />
 
         {/* Define route for AdminLayout with nested routes */}
         <Route path="/admin" element={<AdminLayout />}>
           <Route path="beranda" element={<DashboardAdmin />} />
           <Route path="admins" element={<AdminProfil />} />
           <Route path="products" element={<AdminProduk />} />
+          <Route path="products/tambah" element={<TambahProduk />} />
           <Route path="users" element={<AdminPengguna />} />
-          <Route path="umkm" element={<AdminUmkm/>} />
+          <Route path="umkm" element={<AdminUmkm />} />
           {/* <Route path="logout" element={<AdminLogin/>} /> */}
           {/* Add other nested routes here as needed */}
         </Route>

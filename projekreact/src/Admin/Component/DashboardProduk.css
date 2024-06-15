@@ -4,10 +4,28 @@
 }
 
 .home_produk,
-.produk_produk {
+.produk-header_produk {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   font-size: 24px;
   margin-bottom: 20px;
   font-weight: 600;
+}
+
+.tambah-produk-button_produk {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.2s ease;
+}
+
+.tambah-produk-button_produk:hover {
+  background-color: #0056b3;
 }
 
 .table-container_produk {
