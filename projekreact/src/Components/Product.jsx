@@ -1,5 +1,6 @@
-// src/context/ProductContext.js
+
 import React, { createContext, useState } from 'react';
+
 
 export const ProductContext = createContext();
 
@@ -13,7 +14,7 @@ export const ProductProvider = ({ children }) => {
       description: 'Deskripsi produk',
       address: 'Alamat produk',
       contact: 'Kontak produk',
-      thumbnail: '../Assets/img/rian.png',
+      thumbnail: 'src/Assets/img/rian.png'
     },
     // Produk lainnya...
   ]);

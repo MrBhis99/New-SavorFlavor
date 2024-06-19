@@ -71,7 +71,7 @@ const Dashboard = () => {
             ))}
           </tbody>
         </table>
-        <button className="save-button_dashboardproduk">Simpan</button>
+        
       </div>
       
     </>

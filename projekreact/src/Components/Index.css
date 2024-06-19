@@ -3560,7 +3560,7 @@
     position: absolute;
     font-family: "Inter", sans-serif;
     top: 711px;
-    left: calc(50% - 556px);
+    left: calc(50% - 655px);
     font-weight: 500;
     display: inline-block;
     width: 589px;
@@ -3570,7 +3570,7 @@
     font-family: "Inter", sans-serif;
     position: absolute;
     top: 779px;
-    left: calc(50% - 556px);
+    left: calc(50% - 655px);
     font-weight: 500;
     display: inline-block;
     width: 779px;
@@ -3580,7 +3580,7 @@
     font-family: "Inter", sans-serif;
     position: absolute;
     top: 669px;
-    left: calc(50% - 556px);
+    left: calc(50% - 655px);
     font-weight: 500;
     display: inline-block;
     width: 194px;
@@ -4440,9 +4440,11 @@
   
   .profile-picture_umkm img {
     border-radius: 50%;
-    margin-top: 70px;
+    margin-top: 100px;
     width: 183px;
     height: 183px;
+    right: 500px;
+    
   }
   
   .form_umkm {
