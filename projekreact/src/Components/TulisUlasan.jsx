@@ -1,17 +1,17 @@
-// src/components/Review.jsx
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
-import Navbar from './Navbar'; // Pastikan path-nya benar
-import Footer from './Footer'; // Pastikan path-nya benar
-import { Link } from 'react-router-dom'; // Impor Link dari react-router-dom
+import Navbar from './Navbar';
+import Footer from './Footer';
+import { useNavigate } from 'react-router-dom';
+import { ReviewContext } from '../Components/ulasan';
+import backArrowImage from '../Assets/img/Vector.png';
 
-// Impor gambar panah kembali
-import backArrowImage from '../Assets/img/Vector.png'; // Sesuaikan dengan struktur proyek Anda
-
-const Review = () => {
+const TulisUlasan = () => {
   const [rating, setRating] = useState(0);
   const [reviewText, setReviewText] = useState('');
+  const navigate = useNavigate();
+  const { addReview } = useContext(ReviewContext);
 
   const handleRating = (rate) => {
     setRating(rate);
@@ -22,11 +22,9 @@ const Review = () => {
   };
 
   const saveReview = () => {
-    // Simpan ulasan
-    console.log('Ulasan disimpan:', { rating, reviewText });
-    // Navigasi ke /UlasanBikaAmbon setelah menyimpan ulasan
-    // Gantikan dengan logika navigasi yang sesuai dengan router Anda
-    // history.push('/UlasanBikaAmbon');
+    const newReview = { rating, reviewText };
+    addReview(newReview);
+    navigate('/ulasanbikaambon');
   };
 
   return (
@@ -41,17 +39,15 @@ const Review = () => {
       <Navbar />
       <div style={{ display: 'flex', justifyContent: 'center', padding: '40px' }}>
         <div style={{
-          marginTop:'50px',
+          marginTop: '50px',
           padding: '40px',
           maxWidth: '1200px',
           width: '100%',
           backgroundColor: 'white',
         }}>
           <div style={{ display: 'flex', alignItems: 'center', marginBottom: '20px' }}>
-            <Link to="/Detailumkm" style={{ textDecoration: 'none' }}>
-              <img src={backArrowImage} alt="Back" style={{ width: '30px', height: '30px', cursor: 'pointer' }} />
-            </Link>
-            <h2 style={{ fontSize:'35px', marginLeft: '20px' }}>Ulasan Bika Ambon Rian</h2>
+            <img src={backArrowImage} alt="Back" style={{ width: '30px', height: '30px', cursor: 'pointer' }} />
+            <h2 style={{ fontSize: '35px', marginLeft: '20px' }}>Ulasan Bika Ambon Rian</h2>
           </div>
           <div style={{ display: 'flex', alignItems: 'center' }}>
             {[1, 2, 3, 4, 5].map((star) => (
@@ -64,16 +60,6 @@ const Review = () => {
                 style={{ cursor: 'pointer' }}
               />
             ))}
-            {/* Optionally include a half-star if the rating is not an integer */}
-            {rating % 1 !== 0 && (
-              <FontAwesomeIcon
-                icon={faStar}
-                size="2x"
-                color="orange"
-                onClick={() => handleRating(Math.floor(rating) + 0.5)}
-                style={{ cursor: 'pointer' }}
-              />
-            )}
           </div>
           <textarea
             value={reviewText}
@@ -86,28 +72,26 @@ const Review = () => {
               borderRadius: '5px',
               border: '1px solid lightgray',
               fontSize: '16px',
-              fontFamily: 'Inter, sans-serif' // Pastikan font Inter diaplikasikan
+              fontFamily: 'Inter, sans-serif'
             }}
             placeholder="Tulis ulasan Anda di sini..."
           />
-          <Link to="/UlasanBikaAmbon" style={{ textDecoration: 'none' }}>
-            <button
-              onClick={saveReview}
-              style={{
-                marginTop: '20px',
-                padding: '15px 30px',
-                backgroundColor: 'orange',
-                color: 'white',
-                border: 'none',
-                borderRadius: '5px',
-                cursor: 'pointer',
-                fontSize: '16px',
-                fontFamily: 'Inter, sans-serif' // Pastikan font Inter diaplikasikan
-              }}
-            >
-              Simpan ulasan
-            </button>
-          </Link>
+          <button
+            onClick={saveReview}
+            style={{
+              marginTop: '20px',
+              padding: '15px 30px',
+              backgroundColor: 'orange',
+              color: 'white',
+              border: 'none',
+              borderRadius: '5px',
+              cursor: 'pointer',
+              fontSize: '16px',
+              fontFamily: 'Inter, sans-serif'
+            }}
+          >
+            Simpan ulasan
+          </button>
         </div>
       </div>
       <Footer />
@@ -115,4 +99,4 @@ const Review = () => {
   );
 };
 
-export default Review;
+export default TulisUlasan;

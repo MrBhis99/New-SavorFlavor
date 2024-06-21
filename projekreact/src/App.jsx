@@ -1,3 +1,4 @@
+// src/App.jsx
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './Components/Home';
@@ -30,48 +31,50 @@ import AdminUmkm from './Admin/Component/DashboardUmkm';
 import BookmarkPage from './Components/BookmarkPage';
 import TambahProduk from './Admin/Component/Tambahprodukadmin';
 import { ProductProvider } from './Components/Product';
+import { ReviewProvider } from './Components/ulasan';
 
 function App() {
   return (
     <ProductProvider>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/menu" element={<Menu />} />
-          <Route path="/loginhome" element={<Loginhome />} />
-          <Route path="/berat" element={<Berat />} />
-          <Route path="/ringan" element={<Ringan />} />
-          <Route path="/login1" element={<Login1 />} />
-          <Route path="/daftar" element={<Daftar />} />
-          <Route path="/login2" element={<Login2 />} />
-          <Route path="/umkmprofile" element={<Umkmprofile />} />
-          <Route path="/upload" element={<Upload />} />
-          <Route path='/editproduk/:id' element={<EditProduct />} />
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/profiluser" element={<ProfilUser />} />
-          <Route path="/detailbika" element={<Detailbika />} />
-          <Route path="/detailmie" element={<Detailmie />} />
-          <Route path="/detailumkm" element={<Detailumkm />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/maps" element={<Peta />} />
-          <Route path="/adminlogin" element={<Adminlogin />} />
-          <Route path="/ulasanbikaambon" element={<UlasanBikaAmbon />} />
-          <Route path="/tulisulasan" element={<TulisUlasan />} />
-          <Route path="/BookmarkPage" element={<BookmarkPage />} />
+      <ReviewProvider>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/menu" element={<Menu />} />
+            <Route path="/loginhome" element={<Loginhome />} />
+            <Route path="/berat" element={<Berat />} />
+            <Route path="/ringan" element={<Ringan />} />
+            <Route path="/login1" element={<Login1 />} />
+            <Route path="/daftar" element={<Daftar />} />
+            <Route path="/login2" element={<Login2 />} />
+            <Route path="/umkmprofile" element={<Umkmprofile />} />
+            <Route path="/upload" element={<Upload />} />
+            <Route path='/editproduk/:id' element={<EditProduct />} />
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/profiluser" element={<ProfilUser />} />
+            <Route path="/detailbika" element={<Detailbika />} />
+            <Route path="/detailmie" element={<Detailmie />} />
+            <Route path="/detailumkm" element={<Detailumkm />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/maps" element={<Peta />} />
+            <Route path="/adminlogin" element={<Adminlogin />} />
+            <Route path="/ulasanbikaambon" element={<UlasanBikaAmbon />} />
+            <Route path="/tulisulasan" element={<TulisUlasan />} />
+            <Route path="/BookmarkPage" element={<BookmarkPage />} />
 
-          {/* Define route for AdminLayout with nested routes */}
-          <Route path="/admin" element={<AdminLayout />}>
-            <Route path="beranda" element={<DashboardAdmin />} />
-            <Route path="admins" element={<AdminProfil />} />
-            <Route path="products" element={<AdminProduk />} />
-            <Route path="products/tambah" element={<TambahProduk />} />
-            <Route path="users" element={<AdminPengguna />} />
-            <Route path="umkm" element={<AdminUmkm />} />
-            {/* <Route path="logout" element={<AdminLogin/>} /> */}
-            {/* Add other nested routes here as needed */}
-          </Route>
-        </Routes>
-      </BrowserRouter>
+            {/* Define route for AdminLayout with nested routes */}
+            <Route path="/admin" element={<AdminLayout />}>
+              <Route path="beranda" element={<DashboardAdmin />} />
+              <Route path="admins" element={<AdminProfil />} />
+              <Route path="products" element={<AdminProduk />} />
+              <Route path="products/tambah" element={<TambahProduk />} />
+              <Route path="users" element={<AdminPengguna />} />
+              <Route path="umkm" element={<AdminUmkm />} />
+              {/* Add other nested routes here as needed */}
+            </Route>
+          </Routes>
+        </BrowserRouter>
+      </ReviewProvider>
     </ProductProvider>
   );
 }
