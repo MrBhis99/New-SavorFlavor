@@ -5,6 +5,7 @@ const ReviewContext = createContext();
 const ReviewProvider = ({ children }) => {
   const [reviews, setReviews] = useState([
     {
+      productId: 1, // Add productId to the initial review
       rating: 4,
       reviewText: 'Salah satu Bika ambon enak di medan. Harganya jg terjangkau. Cocok buat oleh-oleh'
     }

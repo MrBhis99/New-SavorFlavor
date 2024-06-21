@@ -60,8 +60,8 @@ function App() {
               <Route path="/about" element={<About />} />
               <Route path="/maps" element={<Peta />} />
               <Route path="/adminlogin" element={<Adminlogin />} />
-              <Route path="/ulasanbikaambon" element={<UlasanBikaAmbon />} />
-              <Route path="/tulisulasan" element={<TulisUlasan />} />
+              <Route path="/ulasanbikaambon/:productId" element={<UlasanBikaAmbon />} />
+              <Route path="/tulisulasan/:productId" element={<TulisUlasan />} />
               <Route path="/BookmarkPage" element={<BookmarkPage />} />
 
               {/* Define route for AdminLayout with nested routes */}

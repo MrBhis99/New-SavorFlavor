@@ -1,13 +1,14 @@
 import React, { useState, useContext } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 import Navbar from './Navbar';
 import Footer from './Footer';
-import { useNavigate } from 'react-router-dom';
 import { ReviewContext } from '../Components/ulasan';
 import backArrowImage from '../Assets/img/Vector.png';
 
 const TulisUlasan = () => {
+  const { productId } = useParams();
   const [rating, setRating] = useState(0);
   const [reviewText, setReviewText] = useState('');
   const navigate = useNavigate();
@@ -22,9 +23,9 @@ const TulisUlasan = () => {
   };
 
   const saveReview = () => {
-    const newReview = { rating, reviewText };
+    const newReview = { productId: parseInt(productId), rating, reviewText };
     addReview(newReview);
-    navigate('/ulasanbikaambon');
+    navigate(`/ulasanbikaambon/${productId}`);
   };
 
   return (
@@ -46,7 +47,7 @@ const TulisUlasan = () => {
           backgroundColor: 'white',
         }}>
           <div style={{ display: 'flex', alignItems: 'center', marginBottom: '20px' }}>
-            <img src={backArrowImage} alt="Back" style={{ width: '30px', height: '30px', cursor: 'pointer' }} />
+            <img src={backArrowImage} alt="Back" style={{ width: '30px', height: '30px', cursor: 'pointer' }} onClick={() => navigate(-1)} />
             <h2 style={{ fontSize: '35px', marginLeft: '20px' }}>Ulasan Bika Ambon Rian</h2>
           </div>
           <div style={{ display: 'flex', alignItems: 'center' }}>

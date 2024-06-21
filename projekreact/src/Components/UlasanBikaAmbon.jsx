@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import './Index.css';
 import Navbar from './Navbar';
 import Footer from './Footer';
@@ -11,18 +11,21 @@ import back from '../Assets/img/Vector.png';
 
 const UlasanBikaAmbon = () => {
   const navigate = useNavigate();
+  const { productId } = useParams();
   const { reviews } = useContext(ReviewContext);
 
   const handleBackClick = () => {
-    navigate('/Detailumkm');
+    navigate(`/detailumkm/${productId}`);
   };
+
+  const filteredReviews = reviews.filter((review) => review.productId === parseInt(productId));
 
   return (
     <>
       <Navbar />
       <div className="halaman-ulasan_ulasan-bika">
         <div className="header-section">
-        <img
+          <img
             className="icon-share_ulasan-bika"
             alt="Back"
             src={back}
@@ -31,11 +34,10 @@ const UlasanBikaAmbon = () => {
             style={{ cursor: 'pointer' }}
           />
           <b className="ulasan-bika-ambon_ulasan-bika">Ulasan Bika Ambon Rian</b>
-   
         </div>
 
         <div className="reviews-container">
-          {reviews.map((review, index) => (
+          {filteredReviews.map((review, index) => (
             <div key={index} className="group-parent_ulasan-bika">
               <img className="group-inner_ulasan-bika" alt="Profile" src={profil} />
               <div className="bintang-container">

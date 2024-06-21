@@ -1,4 +1,3 @@
-// src/Components/Detailumkm.jsx
 import React, { useState, useEffect, useContext } from 'react';
 import { useParams } from 'react-router-dom';
 import { FaBookmark, FaClock, FaMapMarkerAlt, FaInfoCircle } from 'react-icons/fa';
@@ -42,11 +41,11 @@ const Detailumkm = () => {
         <div className="detail-umkm-child"></div>
 
         <div className="lihat-ulasan-wrapper">
-          <b className="lihat-ulasan" id="lihatUlasanText" onClick={() => window.location.href = '/UlasanBikaAmbon'}>Lihat ulasan</b>
+          <b className="lihat-ulasan" id="lihatUlasanText" onClick={() => window.location.href = `/ulasanbikaambon/${product.id}`}>Lihat ulasan</b>
         </div>
 
         <div className="beri-ulasan-wrapper">
-          <b className="beri-ulasan" id="beriUlasanText" onClick={() => window.location.href = '/TulisUlasan'}>Beri ulasan</b>
+          <b className="beri-ulasan" id="beriUlasanText" onClick={() => window.location.href = `/tulisulasan/${product.id}`}>Beri ulasan</b>
         </div>
         <b className="informasi-kontak">Informasi Kontak</b>
         <div className="divkontak">{product.contact}</div>
@@ -61,7 +60,7 @@ const Detailumkm = () => {
         </div>
 
         <b className="lihat-di-maps-container" id="lihatDiMaps">Lihat di
-          <span className="privacy-policy" onClick={() => window.location.href = '/Maps'}>Maps</span>
+          <span className="privacy-policy" onClick={() => window.location.href = '/maps'}>Maps</span>
         </b>
       </div>
       <Footer />
