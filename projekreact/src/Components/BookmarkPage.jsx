@@ -1,21 +1,21 @@
+// src/Components/BookmarkPage.jsx
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Index.css';
 import Navbar from './Navbar';
 import Footer from './Footer';
-import Vector from '../Assets/img/Vector.png';
-import Rian from '../Assets/img/rian.png';
-import Ahun from '../Assets/img/ahun.png';
-import Rika from '../Assets/img/rika.png';
+import { useBookmark } from './BookmarkContext';
 
 const BookmarkPage = () => {
+  const { bookmarkedItems } = useBookmark();
+
   return (
     <>
       <Navbar />
       <div className="bookmark-page_bookmark">
         <b className="favorit_bookmark">Favorit</b>
         <Link to="/ProfilUser">
-          <img className="icon-share_bookmark" alt="Share Icon" src={Vector} id="iconShareImage" />
+          <img className="icon-share_bookmark" alt="Share Icon" src="src/Assets/img/Vector.png" id="iconShareImage" />
         </Link>
         <div className="halaman-utama-parent_bookmark">
           <b className="halaman-utama_bookmark">Halaman Utama</b>
@@ -24,29 +24,17 @@ const BookmarkPage = () => {
           <b className="rekomendasi_bookmark">Rekomendasi</b>
           <b className="tentang-kami_bookmark">Tentang Kami</b>
         </div>
-        <div className="rectangle-parent_bookmark">
-          <div className="group-child_bookmark"></div>
-          <b className="bika-ambon-rian_bookmark">Bika Ambon Rian</b>
-          <div className="group-item_bookmark"></div>
-          <Link to="/Detailumkm">
-            <b className="selengkapnya_bookmark">Selengkapnya &gt;</b>
-          </Link>
-          <img className="image-39-icon_bookmark" alt="Bika Ambon Rian" src={Rian} />
-        </div>
-        <div className="rectangle-group_bookmark">
-          <div className="group-child_bookmark"></div>
-          <b className="bika-ambon-ahun_bookmark">Bika Ambon Ahun</b>
-          <div className="group-item_bookmark"></div>
-          <b className="selengkapnya_bookmark">Selengkapnya &gt;</b>
-          <img className="image-40-icon_bookmark" alt="Bika Ambon Ahun" src={Ahun} />
-        </div>
-        <div className="rectangle-container_bookmark">
-          <div className="group-child_bookmark"></div>
-          <b className="bika-ambon-rian_bookmark">Bika Ambon Rika</b>
-          <div className="group-item_bookmark"></div>
-          <b className="selengkapnya_bookmark">Selengkapnya &gt;</b>
-          <img className="image-42-icon_bookmark" alt="Bika Ambon Rika" src={Rika} />
-        </div>
+        {bookmarkedItems.map((item) => (
+          <div key={item.id} className="rectangle-parent_bookmark">
+            <div className="group-child_bookmark"></div>
+            <b className="bika-ambon-rian_bookmark">{item.name}</b>
+            <div className="group-item_bookmark"></div>
+            <Link to={`/detailumkm/${item.id}`}>
+              <b className="selengkapnya_bookmark">Selengkapnya &gt;</b>
+            </Link>
+            <img className="image-39-icon_bookmark" alt={item.name} src={item.thumbnail} />
+          </div>
+        ))}
       </div>
       <Footer />
     </>

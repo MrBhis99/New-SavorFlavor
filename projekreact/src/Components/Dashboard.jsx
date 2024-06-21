@@ -3,10 +3,9 @@ import { useNavigate } from 'react-router-dom';
 import { ProductContext } from './Product';
 import './Index.css';
 import Navbar from './Navbar';
-import Footer from './Footer';
 
 const Dashboard = () => {
-  const { products } = useContext(ProductContext);
+  const { products, setProducts } = useContext(ProductContext);
   const navigate = useNavigate();
   const [searchTerm, setSearchTerm] = useState('');
 
@@ -16,6 +15,14 @@ const Dashboard = () => {
 
   const handleEditClick = (id) => {
     navigate(`/editproduk/${id}`);
+  };
+
+  const handleDeleteClick = (id) => {
+    const confirmDelete = window.confirm('Apakah Anda yakin ingin menghapus produk ini?');
+    if (confirmDelete) {
+      const updatedProducts = products.filter((product) => product.id !== id);
+      setProducts(updatedProducts);
+    }
   };
 
   const filteredProducts = products.filter((product) =>
@@ -54,9 +61,9 @@ const Dashboard = () => {
             {filteredProducts.map((product) => (
               <tr key={product.id}>
                 <td className="product-cell_dashboardproduk">
-       			 <img src={product.thumbnail} alt={product.name} className="product-thumbnail_dashboardproduk" />
-        		 <span className="product-name_dashboardproduk">{product.name}</span>
-      			</td>
+                  <img src={product.thumbnail} alt={product.name} className="product-thumbnail_dashboardproduk" />
+                  <span className="product-name_dashboardproduk">{product.name}</span>
+                </td>
                 <td>{product.category}</td>
                 <td>Rp.{product.priceRange}</td>
                 <td>
@@ -66,14 +73,18 @@ const Dashboard = () => {
                   >
                     Edit
                   </button>
+                  <button 
+                    className="delete-button_dashboardproduk" 
+                    onClick={() => handleDeleteClick(product.id)}
+                  >
+                    Hapus
+                  </button>
                 </td>
               </tr>
             ))}
           </tbody>
         </table>
-        
       </div>
-      
     </>
   );
 };

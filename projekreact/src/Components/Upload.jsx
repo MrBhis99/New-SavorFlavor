@@ -15,6 +15,8 @@ const Upload = () => {
   const [priceRange, setPriceRange] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('');
   const [thumbnail, setThumbnail] = useState(null);
+  const [openHour, setOpenHour] = useState('');
+  const [closeHour, setCloseHour] = useState('');
 
   const handleCategorySelect = (category) => {
     setSelectedCategory(category);
@@ -37,6 +39,7 @@ const Upload = () => {
       description: productDescription,
       address,
       contact,
+      hours: `${openHour} - ${closeHour}`, // Include open and close hours
     };
     addProduct(newProduct);
     navigate('/dashboard');
@@ -106,6 +109,26 @@ const Upload = () => {
               onChange={handleThumbnailChange} 
             />
             {thumbnail && <img className="thumbnail_preview_editproduk" src={thumbnail} alt="Product Thumbnail" />}
+          </div>
+
+          <div className="form-group_editproduk">
+            <label className="label_editproduk">Buka dari jam</label>
+            <input 
+              type="time" 
+              className="input_editproduk"
+              value={openHour} 
+              onChange={(e) => setOpenHour(e.target.value)} 
+            />
+          </div>
+
+          <div className="form-group_editproduk">
+            <label className="label_editproduk">Tutup pada jam</label>
+            <input 
+              type="time" 
+              className="input_editproduk"
+              value={closeHour} 
+              onChange={(e) => setCloseHour(e.target.value)} 
+            />
           </div>
 
           <div className="form-group_editproduk">

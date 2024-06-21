@@ -2946,432 +2946,97 @@
   .save-button_dashboardproduk:hover {
     background-color: #e59400;
   }
+
+  .delete-button_dashboardproduk {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-left: 5px;
+    border-radius: 5px;
+  }
+  
   
 
 
 /* end of dashboard */
 
 /* Detail Bika Ambon */
-.detail-kuliner-bika-ambon-child {
-    position: absolute;
-    top: 366px;
-    left: 45px;
-    box-shadow: 0px 9px 5px rgba(0, 0, 0, 0.25);
-    background-color: #fff;
-    width: 1340px;
-    height: 269px;
-}
-.detail-kuliner-bika-ambon-item {
-    position: absolute;
-    top: 661px;
-    left: 45px;
-    box-shadow: 0px 9px 5px rgba(0, 0, 0, 0.25);
-    background-color: #fff;
-    width: 1340px;
-    height: 269px;
-}
-.detail-kuliner-bika-ambon-inner {
-    position: absolute;
-    top: 956px;
-    left: 45px;
-    box-shadow: 0px 9px 5px rgba(0, 0, 0, 0.25);
-    background-color: #fff;
-    width: 1340px;
-    height: 269px;
-}
-.detail-rectangle-div {
-    position: absolute;
-    top: 1251px;
-    left: 45px;
-    box-shadow: 0px 9px 5px rgba(0, 0, 0, 0.25);
-    background-color: #fff;
-    width: 1340px;
-    height: 269px;
-}
-.detail-kuliner-bika-ambon-child1 {
-    position: absolute;
-    top: 1546px;
-    left: 45px;
-    box-shadow: 0px 9px 5px rgba(0, 0, 0, 0.25);
-    background-color: #fff;
-    width: 1340px;
-    height: 269px;
-}
-.detail-kuliner-bika-ambon-child2 {
-    position: absolute;
-    top: 1841px;
-    left: 45px;
-    box-shadow: 0px 9px 5px rgba(0, 0, 0, 0.25);
-    background-color: #fff;
-    width: 1340px;
-    height: 269px;
-}
-.detail-kuliner-bika-ambon-child3 {
-    position: absolute;
-    top: 2136px;
-    left: 45px;
-    box-shadow: 0px 9px 5px rgba(0, 0, 0, 0.25);
-    background-color: #fff;
-    width: 1340px;
-    height: 269px;
-}
-.detail-kuliner-bika-ambon-child4 {
-    position: absolute;
-    top: 2431px;
-    left: 45px;
-    box-shadow: 0px 9px 5px rgba(0, 0, 0, 0.25);
-    background-color: #fff;
-    width: 1340px;
-    height: 269px;
-}
-.detail-bika-ambon {
-    font-family: "Inter", sans-serif;
-    position: absolute;
-    top: 130px;
-    left: 596px;
-    font-size: 48px;
-    color: #000;
-}
-.bika-ambon-adalah {
-    font-family: "Inter", sans-serif;
-    position: absolute;
-    top: 236px;
-    right: 120px;
-    font-size: 30px;
-    line-height: 30px;
-    color: #000;
-    text-align: center;
-    display: inline-block;
-    width: 1155px;
-    height: 104px;
-}
-.detail-bika-ambon-rian {
-    font-family: "Inter", sans-serif;
-    position: absolute;
-    top: 470px;
-    left: calc(50% - 241px);
-    display: inline-block;
-    color: #ff8c00;
-    text-align: center;
-    width: 333px;
-    height: 31px;
-}
-.detail-bika-ambon-ahun {
-    font-family: "Inter", sans-serif;
-    position: absolute;
-    top: 765px;
-    left: calc(50% - 241px);
-    display: inline-block;
-    color: #ff8c00;
-    text-align: center;
-    width: 351px;
-    height: 31px;
-}
-.detail-bika-ambon-rika {
-    font-family: "Inter", sans-serif;
-    position: absolute;
-    top: 1060px;
-    left: calc(50% - 241px);
-    display: inline-block;
-    color: #ff8c00;
-    text-align: center;
-    width: 333px;
-    height: 31px;
-}
-.detail-bika-ambon-santi {
-    font-family: "Inter", sans-serif;
-    position: absolute;
-    top: 1355px;
-    left: calc(50% - 241px);
-    display: inline-block;
-    color: #ff8c00;
-    text-align: center;
-    width: 351px;
-    height: 31px;
-}
-.detail-bika-ambon-nasywa {
-    font-family: "Inter", sans-serif;
-    position: absolute;
-    top: 1650px;
-    left: calc(50% - 241px);
-    display: inline-block;
-    color: #ff8c00;
-    text-align: center;
-    width: 414px;
-    height: 31px;
-}
-.detail-bika-ambon-zulaikha {
-    font-family: "Inter", sans-serif;
-    position: absolute;
-    top: 1945px;
-    left: calc(50% - 241px);
-    display: inline-block;
-    color: #ff8c00;
-    text-align: center;
-    width: 416px;
-    height: 31px;
-}
-.detail-bika-ambon-ambon {
-    font-family: "Inter", sans-serif;
-    position: absolute;
-    top: 2240px;
-    left: calc(50% - 255px);
-    display: inline-block;
-    color: #ff8c00;
-    text-align: center;
-    width: 501px;
-    height: 31px;
-}
-.detail-bika-ambon-gaja {
-    font-family: "Inter", sans-serif;
-    position: absolute;
-    top: 2535px;
-    left: calc(50% - 241px);
-    display: inline-block;
-    color: #ff8c00;
-    text-align: center;
-    width: 454px;
-    height: 31px;
-}
+/* src/components/Detailbika.css */
 
-
-.detail-kuliner-bika-ambon-child5 {
-    position: absolute;
-    top: 579px;
-    left: 1186px;
-    border-radius: 10px;
-    background-color: #ff8c00;
-    width: 185px;
-    height: 35px;
-}
-.detail-kuliner-bika-ambon-child6 {
-    position: absolute;
-    top: 874px;
-    left: 1186px;
-    border-radius: 10px;
-    background-color: #ff8c00;
-    width: 185px;
-    height: 35px;
-}
-.detail-kuliner-bika-ambon-child7 {
-    position: absolute;
-    top: 1169px;
-    left: 1186px;
-    border-radius: 10px;
-    background-color: #ff8c00;
-    width: 185px;
-    height: 35px;
-}
-.detail-kuliner-bika-ambon-child8 {
-    position: absolute;
-    top: 1464px;
-    left: 1186px;
-    border-radius: 10px;
-    background-color: #ff8c00;
-    width: 185px;
-    height: 35px;
-}
-.detail-kuliner-bika-ambon-child9 {
-    position: absolute;
-    top: 1759px;
-    left: 1186px;
-    border-radius: 10px;
-    background-color: #ff8c00;
-    width: 185px;
-    height: 35px;
-}
-.detail-kuliner-bika-ambon-child10 {
-    position: absolute;
-    top: 2054px;
-    left: 1186px;
-    border-radius: 10px;
-    background-color: #ff8c00;
-    width: 185px;
-    height: 35px;
-}
-.detail-kuliner-bika-ambon-child11 {
-    position: absolute;
-    top: 2349px;
-    left: 1186px;
-    border-radius: 10px;
-    background-color: #ff8c00;
-    width: 185px;
-    height: 35px;
-}
-.detail-kuliner-bika-ambon-child12 {
-    position: absolute;
-    top: 2644px;
-    left: 1186px;
-    border-radius: 10px;
-    background-color: #ff8c00;
-    width: 185px;
-    height: 35px;
-}
-.detail-selengkapnya {
-    font-family: "Montserrat", sans-serif;
-    position: absolute;
-    top: 584px;
-    left: 1201px;
-    font-size: 20px;
-    display: inline-block;
-    width: 175px;
-    height: 34px;
-    cursor: pointer;
-}
-.detail-selengkapnya1 {
-    font-family: "Montserrat", sans-serif;
-    position: absolute;
-    top: 879px;
-    left: 1201px;
-    font-size: 20px;
-    display: inline-block;
-    width: 175px;
-    height: 34px;
-}
-.detail-selengkapnya2 {
-    font-family: "Montserrat", sans-serif;
-    position: absolute;
-    top: 1174px;
-    left: 1201px;
-    font-size: 20px;
-    display: inline-block;
-    width: 175px;
-    height: 34px;
-}
-.detail-selengkapnya3 {
-    font-family: "Montserrat", sans-serif;
-    position: absolute;
-    top: 1469px;
-    left: 1201px;
-    font-size: 20px;
-    display: inline-block;
-    width: 175px;
-    height: 34px;
-}
-.detail-selengkapnya4 {
-    font-family: "Montserrat", sans-serif;
-    position: absolute;
-    top: 1764px;
-    left: 1201px;
-    font-size: 20px;
-    display: inline-block;
-    width: 175px;
-    height: 34px;
-}
-.detail-selengkapnya5 {
-    font-family: "Montserrat", sans-serif;
-    position: absolute;
-    top: 2059px;
-    left: 1201px;
-    font-size: 20px;
-    display: inline-block;
-    width: 175px;
-    height: 34px;
-}
-.detail-selengkapnya6 {
-    font-family: "Montserrat", sans-serif;
-    position: absolute;
-    top: 2354px;
-    left: 1201px;
-    font-size: 20px;
-    display: inline-block;
-    width: 175px;
-    height: 34px;
-}
-.detail-selengkapnya7 {
-    font-family: "Montserrat", sans-serif;
-    position: absolute;
-    top: 2649px;
-    left: 1201px;
-    font-size: 20px;
-    display: inline-block;
-    width: 175px;
-    height: 34px;
-}
-.detail1 {
-    position: absolute;
-    top: 388px;
-    left: 87px;
-    border-radius: 10px;
-    width: 346px;
-    height: 195px;
-    object-fit: cover;
-}
-.detail2 {
-    position: absolute;
-    top: 683px;
-    left: 88px;
-    border-radius: 10px;
-    width: 345px;
-    height: 195px;
-    object-fit: cover;
-}
-.detail3 {
-    position: absolute;
-    top: 979px;
-    left: 88px;
-    border-radius: 10px;
-    width: 345px;
-    height: 195px;
-    object-fit: cover;
-}
-.detail4 {
-    position: absolute;
-    top: 1274px;
-    left: 87px;
-    border-radius: 10px;
-    width: 345px;
-    height: 195px;
-    object-fit: cover;
-}
-.detail5 {
-    position: absolute;
-    top: 1557px;
-    left: 88px;
-    border-radius: 10px;
-    width: 344px;
-    height: 195px;
-    object-fit: cover;
-}
-.detail6 {
-    position: absolute;
-    top: 1852px;
-    left: 87px;
-    border-radius: 10px;
-    width: 345px;
-    height: 195px;
-    object-fit: cover;
-}
-.detail7 {
-    position: absolute;
-    top: 2154px;
-    left: 87px;
-    border-radius: 10px;
-    width: 344px;
-    height: 195px;
-    object-fit: cover;
-}
-.detail8 {
-    position: absolute;
-    top: 2449px;
-    left: 87px;
-    border-radius: 10px;
-    width: 344px;
-    height: 195px;
-    object-fit: cover;
-}
-.detail-kuliner-bika-ambon {
-    width: 100%;
-    position: relative;
-    background-color: #fff;
-    height: 2800px;
-    overflow: hidden;
-    text-align: left;
+.detail-container_detailbika {
+    padding: 20px;
+    margin-top: 30px ;
+  }
+  
+  .detail-title_detailbika {
+    text-align: center;
     font-size: 40px;
+    margin-bottom: 20px;
+  }
+  
+  .detail-description_detailbika {
+    font-family: "inter", sans-serif;
+    font-weight: 700px;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 25px;
+    color: #555;
+  }
+  
+  .product-detail_detailbika {
+    display: flex;
+    align-items: center;
+    height: 200px;
+    justify-content: space-between;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Menambahkan bayangan dengan ukuran 0px (horizontal), 2px (vertical), 4px (blur), dan warna hitam dengan opacity 0.1 */
+  }
+  
+  
+  .product-image_detailbika {
+    width: 250px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-right: 20px;
+  }
+  
+  .product-info_detailbika {
+    flex: 1;
+  }
+  
+  .product-info_detailbika h3 {
+    margin-top: 50px;
+    font-size: 30px;
+    color: #333;
+  }
+  
+  .product-info_detailbika p {
+    margin: 10px 0;
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .detail-button_detailbika {
+    display: flex;
+    margin-left: 900px;
+    background-color: #f60;
     color: #fff;
-    font-family: Inter;
-}
-
+    border: none;
+    padding: 10px 15px;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  
+  .detail-button_detailbika:hover {
+    background-color: #e55;
+  }
+  
 
 /* End of detail bika ambon */
 /* Detail UMKM */

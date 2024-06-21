@@ -1,67 +1,67 @@
-import React, { useState } from 'react';
-import { FaBookmark, FaClock, FaMapMarkerAlt, FaInfoCircle } from 'react-icons/fa'; // Import the necessary icons
-import umkm1 from '../Assets/img/rian.png';
+// src/Components/Detailumkm.jsx
+import React, { useState, useEffect, useContext } from 'react';
+import { useParams } from 'react-router-dom';
+import { FaBookmark, FaClock, FaMapMarkerAlt, FaInfoCircle } from 'react-icons/fa';
+import { ProductContext } from './Product';
+import { useBookmark } from './BookmarkContext';
 import Navbar from './Navbar';
 import Footer from './Footer';
+import imgumkm from '../Assets/img/rian.png'; // Fallback image
 
 const Detailumkm = () => {
-  const [isBookmarked, setIsBookmarked] = useState(false); // State to track bookmark status
+  const { id } = useParams();
+  const { products } = useContext(ProductContext);
+  const { bookmarkedItems, toggleBookmark } = useBookmark();
+  const [product, setProduct] = useState(null);
 
-  const peta = () => {
-    window.location.href = '/Maps'; // Mengarahkan pengguna ke URL "/menu"
-  };
+  useEffect(() => {
+    const productData = products.find((p) => p.id === parseInt(id));
+    setProduct(productData);
+  }, [id, products]);
 
-  const ulasan = () => {
-    window.location.href = '/TulisUlasan'; // Mengarahkan pengguna ke URL "/menu"
-  };
+  const isBookmarked = product && bookmarkedItems.some((item) => item.id === product.id);
 
-  const lihatulasan = () => {
-    window.location.href = '/UlasanBikaAmbon';
-  };
-
-  const toggleBookmark = () => {
-    setIsBookmarked(!isBookmarked); // Toggle the bookmark status
-  };
+  if (!product) return <div>Loading...</div>;
 
   return (
     <>
       <Navbar />
       <div className="detail-umkm">
         <b className="mamank-kuliner">Mamank kuliner</b>
-        <img className="img-umkm" alt="" src={umkm1} />
+        <img className="img-umkm" alt={product.name} src={imgumkm} />
         <div className="rectangle-parent-umkm">
           <div className="group-child-umkm"></div>
         </div>
         <div className="bika-ambon-rian-umkm">
-          <b>Bika Ambon Rian</b>
-          <button className="bookmark-button" onClick={toggleBookmark} style={{ background: 'none', border: 'none' }}>
+          <b>{product.name}</b>
+          <button className="bookmark-button" onClick={() => toggleBookmark(product)} style={{ background: 'none', border: 'none' }}>
             <FaBookmark color={isBookmarked ? 'gold' : 'grey'} size={24} />
           </button>
         </div>
-        <div className="rp-35000">Rp 35.000</div>
+        <div className="rp-35000">Rp {product.priceRange}</div>
         <div className="detail-umkm-child"></div>
 
         <div className="lihat-ulasan-wrapper">
-          <b className="lihat-ulasan" id="lihatUlasanText" onClick={lihatulasan}>Lihat ulasan</b>
+          <b className="lihat-ulasan" id="lihatUlasanText" onClick={() => window.location.href = '/UlasanBikaAmbon'}>Lihat ulasan</b>
         </div>
 
         <div className="beri-ulasan-wrapper">
-          <b className="beri-ulasan" id="beriUlasanText" onClick={ulasan}>Beri ulasan</b>
+          <b className="beri-ulasan" id="beriUlasanText" onClick={() => window.location.href = '/TulisUlasan'}>Beri ulasan</b>
         </div>
         <b className="informasi-kontak">Informasi Kontak</b>
-        <div className="divkontak">085277116735</div>
+        <div className="divkontak">{product.contact}</div>
         <div className="jl-sumatera-no78-umkm">
-          <FaMapMarkerAlt /> Jl. Sumatera No.78, Belawan I, Medan Kota Belawan, Kota Medan, Sumatera Utara 20411
+          <FaMapMarkerAlt /> {product.address}
         </div>
         <div className="bika-ambon-adalah-umkm">
-          <FaInfoCircle /> Bika Ambon adalah kue tradisional Indonesia yang terkenal dengan teksturnya yang lembut dan rasa manisnya yang khas.
+          <FaInfoCircle /> {product.description}
         </div>
         <div className="divjam">
-          <FaClock /> 08.00-22.00
+          <FaClock /> {product.hours}
         </div>
 
         <b className="lihat-di-maps-container" id="lihatDiMaps">Lihat di
-          <span className="privacy-policy" onClick={peta}>Maps</span>
+          <span className="privacy-policy" onClick={() => window.location.href = '/Maps'}>Maps</span>
         </b>
       </div>
       <Footer />

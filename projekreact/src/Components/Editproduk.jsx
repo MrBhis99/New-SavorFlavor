@@ -1,4 +1,3 @@
-// src/components/EditProductForm.jsx
 import React, { useState, useContext, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { ProductContext } from './Product';
@@ -17,6 +16,8 @@ const EditProduct = () => {
   const [priceRange, setPriceRange] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('');
   const [thumbnail, setThumbnail] = useState(null);
+  const [openHour, setOpenHour] = useState('');
+  const [closeHour, setCloseHour] = useState('');
 
   useEffect(() => {
     const product = products.find((p) => p.id === parseInt(id));
@@ -26,8 +27,13 @@ const EditProduct = () => {
       setAddress(product.address);
       setContact(product.contact);
       setSelectedCategory(product.category);
-      setPriceRange(product.priceRange); // Use priceRange here
+      setPriceRange(product.priceRange);
       setThumbnail(product.thumbnail);
+      if (product.hours) {
+        const [open, close] = product.hours.split('-');
+        setOpenHour(open);
+        setCloseHour(close);
+      }
     }
   }, [id, products]);
 
@@ -50,8 +56,9 @@ const EditProduct = () => {
       address,
       contact,
       category: selectedCategory,
-      priceRange: priceRange,
+      priceRange,
       thumbnail,
+      hours: `${openHour}-${closeHour}`, // Use the open and close hours
     };
     updateProduct(updatedProduct);
     navigate('/dashboard');
@@ -121,6 +128,26 @@ const EditProduct = () => {
               onChange={handleThumbnailChange} 
             />
             {thumbnail && <img className="thumbnail_preview_editproduk" src={thumbnail} alt="Product Thumbnail" />}
+          </div>
+
+          <div className="form-group_editproduk">
+            <label className="label_editproduk">Buka dari jam</label>
+            <input 
+              type="time" 
+              className="input_editproduk"
+              value={openHour} 
+              onChange={(e) => setOpenHour(e.target.value)} 
+            />
+          </div>
+
+          <div className="form-group_editproduk">
+            <label className="label_editproduk">Tutup pada jam</label>
+            <input 
+              type="time" 
+              className="input_editproduk"
+              value={closeHour} 
+              onChange={(e) => setCloseHour(e.target.value)} 
+            />
           </div>
 
           <div className="form-group_editproduk">
